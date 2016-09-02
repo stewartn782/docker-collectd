@@ -1,12 +1,12 @@
 FROM debian:jessie
 
-ENV COLLECTD_VERSION 5.5.0
+ENV COLLECTD_VERSION 5.5.2
 WORKDIR /usr/src/
 
 ADD collectd.conf /etc/collectd/
 ADD entrypoint.sh /entrypoint.sh
 
-RUN echo 'ef97838e249814ad96a2edc0410326efbb4f3d08  collectd-5.5.0.tar.bz2' > /tmp/collectd.sig && \
+RUN echo '5d850b1b91cb88dd784a552f6f0dbee8ee76300f  collectd-5.5.2.tar.bz2' > /tmp/collectd.sig && \
     apt-get update && \
     apt-get install -y build-essential wget tar lbzip2 && \
     wget https://collectd.org/files/collectd-$COLLECTD_VERSION.tar.bz2 && \
