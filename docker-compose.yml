@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  collectd:
+    image: collectd:latest
+    privileged: true
+    network_mode: host
+    volumes:
+      - /proc:/mnt/proc:ro
