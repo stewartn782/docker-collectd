@@ -20,7 +20,7 @@ docker run \
   stewartn782/collectd
 ```
 
-Run collectd with a custom configuration stored in /etc/collect
+Run collectd with a custom configuration stored in /etc/collectd:
 
 ```
 docker run \
@@ -29,6 +29,19 @@ docker run \
   -v /proc:/mnt/proc:ro \
   stewartn782/collectd
 ```
+
+Run collectd with docker-compose, amending the image tag as required:
+
+```
+services:
+  collectd:
+    image: collectd:latest
+    privileged: true
+    network_mode: host
+    volumes:
+      - /proc:/mnt/proc:ro
+```
+
 
 ## FAQ
 
